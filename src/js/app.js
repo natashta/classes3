@@ -1,13 +1,11 @@
 const getNumber = (str) => {
   try {
-    let parsed = +str;
-    console.log(parsed);
-    if ((parsed ^ 0) !== parsed || Number.isNaN(parsed) || parsed <= 0) {
-      throw new Error('Ввод некорректен');
-    } else return parsed;
+      if(/^[1-9]\d*$/.test(str) && str > 0)
+        return Number(str);
+    else throw new Error('Ввод некорректен');
   } catch (e) {
     return e;
-  }  
+  }
 };
 
 export default getNumber;

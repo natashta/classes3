@@ -1,21 +1,57 @@
 import getNumber from '../src/js/app';
 
 test('should return number', () => {
-  expect(getNumber('80')).toBe(80);
+  const input = '80';
+  const expected = 80;
+  const recerved = getNumber(input);
+  expect(recerved).toBe(expected);
 });
 
 test('input null should return error', () => {
-  expect(getNumber('0')).toEqual(Error('Ввод некорректен'));
+  const input = '0';
+  const expected = Error('Ввод некорректен');
+  const recerved = getNumber(input);
+  expect(recerved).toEqual(expected);
 });
 
 test('input negative should return error', () => {
-  expect(getNumber('-1')).toEqual(Error('Ввод некорректен'));
+  const input = '-1';
+  const expected = Error('Ввод некорректен');
+  const recerved = getNumber(input);
+  expect(recerved).toEqual(expected);
 });
 
 test('input non integer should return error', () => {
-  expect(getNumber('0.6')).toEqual(Error('Ввод некорректен'));
+  const input = '0.6';
+  const expected = Error('Ввод некорректен');
+  const recerved = getNumber(input);
+  expect(recerved).toEqual(expected);
 });
 
 test('input string should return error', () => {
-  expect(getNumber('string')).toEqual(Error('Ввод некорректен'));
+  const input = 'string';
+  const expected = Error('Ввод некорректен');
+  const recerved = getNumber(input);
+  expect(recerved).toEqual(expected);
+});
+
+test('empty input should return error', () => {
+  const input = '';
+  const expected = Error('Ввод некорректен');
+  const recerved = getNumber(input);
+  expect(recerved).toEqual(expected);
+});
+
+test('input binary and octagonal numbers should return error', () => {
+  const input = '0234';
+  const expected = Error('Ввод некорректен');
+  const recerved = getNumber(input);
+  expect(recerved).toEqual(expected);
+});
+
+test('empty input hexadecimal number should return error', () => {
+  const input = '0x23';
+  const expected = Error('Ввод некорректен');
+  const recerved = getNumber(input);
+  expect(recerved).toEqual(expected);
 });
