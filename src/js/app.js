@@ -1,10 +1,9 @@
-const getNumber = (str) => {
-  try {
-    if (/^[1-9]\d*$/.test(str) && str > 0) return Number(str);
-    throw new Error('Ввод некорректен');
-  } catch (e) {
-    return e;
-  }
-};
+import Character from './function';
 
-export default getNumber;
+const hero = new Character(100, 40, 10);
+
+hero.powerMode = true;
+
+hero.toAttack();
+hero.toAttack();
+hero.toAttack();

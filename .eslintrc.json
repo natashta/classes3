@@ -14,5 +14,14 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-restricted-syntax": [
+            "error",
+            "LabeledStatement",
+            "WithStatement"
+          ],
+        "no-underscore-dangle": ["error", {
+            "allowAfterThis": true,
+            "allow": ["foo_", "_bar"]
+        }]
     }
 }
